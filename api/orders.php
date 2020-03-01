@@ -34,4 +34,5 @@ curl_close($ch);
 header('Content-type: application/json');
 echo json_encode($result, JSON_FORCE_OBJECT);
 
+exit();
 ?>
