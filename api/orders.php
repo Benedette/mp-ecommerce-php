@@ -19,6 +19,8 @@ $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $
 
 $json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items);
 
+$headers = array('Content-type' => "application/json");
+
 // use key 'http' even if you send the request to https://...
 // $options = array(
 //     'http' => array(
@@ -38,6 +40,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $mp_endpoint);
 curl_setopt($ch, CURLOPT_POST, count($json));
 curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+curl_setopt ($ch, CURLOPT_HTTPHEADER, $headers);
 
 // execute post
 $result = curl_exec($ch);
