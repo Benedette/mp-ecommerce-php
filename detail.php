@@ -152,8 +152,6 @@
         </div>
         <script>
             (function() {
-                var external_reference = null;
-
                 var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
                 var title = "<?php echo $_POST['title'] ?>";
                 var unit = "<?php echo $_POST['unit'] ?>";
@@ -165,29 +163,28 @@
                     type: "POST",
                     dataType: 'json',
                     success: function(data) {
-                        external_reference = JSON.parse(data).external_reference;
+                        var external_reference = JSON.parse(data).external_reference;
+                        var pollInterval = null;
+                        var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
+
+                        var poll = function() {
+                            $.ajax({
+                                url: poll_url,
+                                dataType: 'json',
+                                type: 'get',
+                                success: function(data) {
+                                    var status = JSON.parse(data).status;
+
+                                    document.getElementById("order-status").innerText = status;
+                                    if (status === "closed") {
+                                        clearInterval(pollInterval);
+                                    }
+                                }
+                            });
+                        };
+                        pollInterval = setInterval(poll, 1000);
                     }
                 });
-
-                var pollInterval = null;
-
-                var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
-                var poll = function() {
-                    $.ajax({
-                        url: poll_url,
-                        dataType: 'json',
-                        type: 'get',
-                        success: function(data) {
-                            var status = JSON.parse(data).status;
-
-                            document.getElementById("order-status").innerText = status;
-                            if (status === "closed") {
-                                clearInterval(pollInterval);
-                            }
-                        }
-                    });
-                };
-                pollInterval = setInterval(poll, 1000);
             })();
         </script>
 
