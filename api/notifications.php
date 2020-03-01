@@ -34,7 +34,7 @@ if ($topic == "merchant_order") {
     $external_reference = $response_mo['external_reference'];
     $status = $response_mo['status'];
 
-    if (!isset($_SESSION['db'])) {
+    if (isset($_SESSION['db'])) {
         $_SESSION['db'] = array();
     }
 
