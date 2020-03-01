@@ -2,6 +2,6 @@
 
 session_start();
 
-error_log(json_encode($_SESSION["db"]));
+error_log(json_encode($_SESSION));
 
 ?>
