@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 http_response_code(200);
 
 $mp_endpoint = 'https://api.mercadopago.com/mpmobile/instore/qr/520255910/pythontest?access_token=APP_USR-8784583960835302-012920-171e94e7f45cc4e31e3cbcd15fb591ef-520255910';
@@ -13,7 +15,7 @@ $fecha = date_create();
 $time_stamp = date_timestamp_get($fecha);
 
 $external_reference = 'niclas-' . $time_stamp;
-$notification_url = 'https://flask-example-niclas.herokuapp.com/notifications';
+$notification_url = 'https://flask-example-niclas.herokuapp.com/notifications.php';
 
 $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $quantity, 'unit_price' => $unit_price);
 
@@ -27,4 +29,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 var_dump($result);
+
+$db = null;
+
 ?>
