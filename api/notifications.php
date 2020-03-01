@@ -6,12 +6,13 @@ http_response_code(200);
 $json = file_get_contents('php://input');
 error_log($json);
 
+// Converts it into a PHP object
+$data = json_decode($json, true);
+
 if ($topic != "payments") {
     return;
 }
 
-// Converts it into a PHP object
-$data = json_decode($json, true);
 error_log($data['topic']);
 error_log($_GET['id']);
 $topic = $data['topic'];
