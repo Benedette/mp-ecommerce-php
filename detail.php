@@ -132,6 +132,7 @@
                                     </div>
                                     <img style="width: 200px; height: 200px;" src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" />
                                     <button type="button" class="mercadopago-button" id="btn-create-order">Create order</button>
+                                    <button type="button" class="mercadopago-button" id="btn-delete-order">Delete order</button>
                                     <div id="order-status-wrapper">
                                         <b>Order status:<b> <span id="order-status">not created</span>
                                     </div>
