@@ -202,9 +202,7 @@
                         type: "POST",
                         dataType: 'json',
                         success: function(data) {
-                            setTimeout(() => {
-                                document.getElementById("order-status").innerText = "Erased";
-                            });
+                            document.getElementById("order-status").innerText = "Erased";
                         }
                     })
                 });
