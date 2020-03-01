@@ -28,7 +28,9 @@ if ($topic == "merchant_order") {
     curl_close($ch);
     error_log($result);
 
-    $response_mo = json_decode($result);
+    $response_mo = json_decode($result, true);
+    error_log($response_mo['external_reference']);
+    error_log($response_mo['status']);
     $external_reference = $response_mo['external_reference'];
     $status = $response_mo['status'];
 
