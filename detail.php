@@ -175,7 +175,9 @@
                                 success: function(data) {
                                     var status = data.status;
 
-                                    document.getElementById("order-status").innerText = status;
+                                    if (status !== null) {
+                                        document.getElementById("order-status").innerText = status;
+                                    }
                                     if (status === "closed") {
                                         clearInterval(pollInterval);
                                     }
