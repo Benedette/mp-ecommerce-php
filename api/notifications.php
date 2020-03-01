@@ -4,10 +4,10 @@ session_start();
 
 http_response_code(200);
 
-print_r($_POST["id"]);
-print_r($_POST["topic"]);
+$data = json_decode(file_get_contents('php://input'), true);
 
-var_dump($_POST["id"]);
-var_dump($_POST["topic"]);
+print_r($data);
+
+var_dump($data);
 
 ?>
