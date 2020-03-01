@@ -17,7 +17,7 @@ $notification_url = 'https://flask-example-niclas.herokuapp.com/notifications';
 
 $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $quantity, 'unit_price' => $unit_price);
 
-$json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items);
+$json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => array($items));
 
 $ch = curl_init($mp_endpoint);
 
