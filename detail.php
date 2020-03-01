@@ -132,6 +132,9 @@
                                     </div>
                                     <img style="width: 200px; height: 200px;" src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" />
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <div id="order-status-wrapper">
+                                        <b>Order status:<b> <span id="order-status">not created</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -149,6 +152,8 @@
         </div>
         <script>
             (function() {
+                var external_reference = null;
+
                 var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
                 var title = "<?php echo $_POST['title'] ?>";
                 var unit = "<?php echo $_POST['unit'] ?>";
@@ -160,29 +165,29 @@
                     type: "POST",
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data);
-                        console.log(JSON.parse(data).id)
+                        external_reference = JSON.parse(data).external_reference;
                     }
                 });
 
-                // var poll_url = "{{baseurl}}/api/status?external_reference={{external_reference}}";
-                // var poll = function() {
-                //     $.ajax({
-                //         url: poll_url,
-                //         dataType: 'json',
-                //         type: 'get',
-                //         success: function(data) {
-                //             if ( data.status ) {
-                //                 $('#order_status').text('Estado de la orden: '+data.status);
-                //                 if(data.status === 'closed') {
-                //                     clearInterval(pollInterval);
-                //                 }
-                //             }
-                //         }
-                //     });
-                // };
-                // var pollInterval = setInterval( function() { poll(); }, 3000);
-                // poll();
+                var pollInterval = null;
+
+                var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
+                var poll = function() {
+                    $.ajax({
+                        url: poll_url,
+                        dataType: 'json',
+                        type: 'get',
+                        success: function(data) {
+                            var status = JSON.parse(data).status;
+
+                            document.getElementById("order-status").innerText = status;
+                            if (status === "closed") {
+                                clearInterval(pollInterval);
+                            }
+                        }
+                    });
+                };
+                pollInterval = setInterval(poll, 1000);
             })();
         </script>
 
