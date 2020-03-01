@@ -12,12 +12,12 @@ $currency_id = 'ARS';
 $fecha = date_create();
 $time_stamp = date_timestamp_get($fecha);
 
-$external_reference = 'niclas-' + $time_stamp
-$notification_url = 'https://flask-example-niclas.herokuapp.com/notifications'
+$external_reference = 'niclas-' + $time_stamp;
+$notification_url = 'https://flask-example-niclas.herokuapp.com/notifications';
 
 $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $quantity, 'unit_price' => $unit_price);
 
-$json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items)
+$json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items);
 
 // use key 'http' even if you send the request to https://...
 // $options = array(
