@@ -11,16 +11,17 @@ $json = file_get_contents('php://input');
 $data = json_decode($json);
 
 $topic = $data['topic'];
-$resource = $data['resource'];
+//$resource = $data['resource'];
 
 if ($topic == "merchant_order") {
-    $ch = curl_init($resource);
-
+    $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$data['id'];
+    $ch = curl_init($url_mo);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);
     error_log($result);
 }
+
 
 ?>
