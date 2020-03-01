@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-error_log("Session: ".session_id());
 http_response_code(200);
 
 // Takes raw data from the request
