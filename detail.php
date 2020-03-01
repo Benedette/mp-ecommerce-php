@@ -130,6 +130,7 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
+                                    <img src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" />
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                 </div>
                             </div>
