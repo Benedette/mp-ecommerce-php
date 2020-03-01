@@ -34,8 +34,24 @@ if ($topic == "merchant_order") {
     $external_reference = $response_mo['external_reference'];
     $status = $response_mo['status'];
 
-    $db = array($external_reference => $status);
-    error_log(json_encode($db, true));
+    if (!isset($_SESSION['db'])) {
+        $_SESSION['db'] = array();
+    }
+
+    // appendear/updatear el estado de la external reference
+    /*
+        session = {
+            db: {
+                niclas-1231: closed,
+                niclas-3421412: opened,
+            }
+        }
+    */
+    $_SESSION['db'][$external_reference] = $status;
+
+    // $db = array($external_reference => $status);
+    // $_SESSION["db"]=$db;
+    // error_log(json_encode($db, true));
 }
 
 ?>
