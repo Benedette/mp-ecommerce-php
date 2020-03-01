@@ -173,7 +173,7 @@
                                 dataType: 'json',
                                 type: 'get',
                                 success: function(data) {
-                                    var status = JSON.parse(data).status;
+                                    var status = data.status;
 
                                     document.getElementById("order-status").innerText = status;
                                     if (status === "closed") {
