@@ -17,6 +17,8 @@ $session_id = $_GET['session_id'];
 
 session_id($session_id);
 
+session_start();
+
 
 //$resource = $data['resource'];
 
