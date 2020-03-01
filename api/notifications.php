@@ -11,20 +11,20 @@ error_log($json);
 
 // Converts it into a PHP object
 $data = json_decode($json, true);
-var_dump($data->topic);
+var_dump($data);
 
-$topic = $data->topic;
-//$resource = $data['resource'];
+// $topic = $data->topic;
+// //$resource = $data['resource'];
 
-if ($topic == "merchant_order") {
-    $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$data['id'];
-    $ch = curl_init($url_mo);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    error_log($result);
-}
+// if ($topic == "merchant_order") {
+//     $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$data['id'];
+//     $ch = curl_init($url_mo);
+//     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     $result = curl_exec($ch);
+//     curl_close($ch);
+//     error_log($result);
+// }
 
 
 ?>
