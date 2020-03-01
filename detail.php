@@ -155,31 +155,31 @@
 
                 $.ajax({
                     url: ordersUrl,
-                    data: "title="+title+"&unit="+unit+"&price="+price,
+                    data: "title="+title+"&quantity="+unit+"&unit_price="+price,
                     type: "POST",
                     success: function(data) {
                         console.log(data);
                     }
                 });
 
-                var poll_url = "{{baseurl}}/api/status?external_reference={{external_reference}}";
-                var poll = function() {
-                    $.ajax({
-                        url: poll_url,
-                        dataType: 'json',
-                        type: 'get',
-                        success: function(data) {
-                            if ( data.status ) {
-                                $('#order_status').text('Estado de la orden: '+data.status);
-                                if(data.status === 'closed') {
-                                    clearInterval(pollInterval);
-                                }
-                            }
-                        }
-                    });
-                };
-                var pollInterval = setInterval( function() { poll(); }, 3000);
-                poll();
+                // var poll_url = "{{baseurl}}/api/status?external_reference={{external_reference}}";
+                // var poll = function() {
+                //     $.ajax({
+                //         url: poll_url,
+                //         dataType: 'json',
+                //         type: 'get',
+                //         success: function(data) {
+                //             if ( data.status ) {
+                //                 $('#order_status').text('Estado de la orden: '+data.status);
+                //                 if(data.status === 'closed') {
+                //                     clearInterval(pollInterval);
+                //                 }
+                //             }
+                //         }
+                //     });
+                // };
+                // var pollInterval = setInterval( function() { poll(); }, 3000);
+                // poll();
             })();
         </script>
 
