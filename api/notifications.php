@@ -10,9 +10,10 @@ $json = file_get_contents('php://input');
 error_log($json);
 
 // Converts it into a PHP object
-$data = json_decode($json);
+$data = json_decode($json, true);
+var_dump($data->topic);
 
-$topic = $data['topic'];
+$topic = $data->topic;
 //$resource = $data['resource'];
 
 if ($topic == "merchant_order") {
