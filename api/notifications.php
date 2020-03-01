@@ -15,6 +15,9 @@ error_log($data['topic']);
 error_log($_GET['id']);
 $topic = $data['topic'];
 $id = $_GET['id'];
+$session_id = $_GET['session_id'];
+
+session_id($session_id);
 
 
 //$resource = $data['resource'];
