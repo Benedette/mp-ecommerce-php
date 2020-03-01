@@ -34,7 +34,8 @@ if ($topic == "merchant_order") {
     $external_reference = $response_mo['external_reference'];
     $status = $response_mo['status'];
 
-    if (isset($_SESSION['db'])) {
+    if (!isset($_SESSION['db'])) {
+        error_log("aca entre");
         $_SESSION['db'] = array();
     }
 
