@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+error_log("Session: ".session_id());
 http_response_code(200);
 
 // Takes raw data from the request
@@ -34,6 +34,8 @@ if ($topic == "merchant_order") {
     $external_reference = $response_mo['external_reference'];
     $status = $response_mo['status'];
 
+    error_log(json_encode($_SESSION));
+    
     if (!isset($_SESSION['db'])) {
         error_log("aca entre");
         $_SESSION['db'] = array();
