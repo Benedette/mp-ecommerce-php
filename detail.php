@@ -131,7 +131,7 @@
                                         </h3>
                                     </div>
                                     <img style="width: 200px; height: 200px;" src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" />
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <button type="button" class="mercadopago-button" id="btn-create-order">Crear orden</button>
                                     <div id="order-status-wrapper">
                                         <b>Order status:<b> <span id="order-status">not created</span>
                                     </div>
@@ -152,40 +152,44 @@
         </div>
         <script>
             (function() {
-                var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
-                var title = "<?php echo $_POST['title'] ?>";
-                var unit = "<?php echo $_POST['unit'] ?>";
-                var price = "<?php echo $_POST['price'] ?>";
+                document.getElementById('btn-create-order').addEventListener("click", function() {
+                    var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
+                    var title = "<?php echo $_POST['title'] ?>";
+                    var unit = "<?php echo $_POST['unit'] ?>";
+                    var price = "<?php echo $_POST['price'] ?>";
 
-                $.ajax({
-                    url: ordersUrl,
-                    data: "title="+title+"&quantity="+unit+"&unit_price="+price,
-                    type: "POST",
-                    dataType: 'json',
-                    success: function(data) {
-                        var external_reference = JSON.parse(data).external_reference;
-                        var pollInterval = null;
-                        var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
+                    document.getElementById("order-status").innerText = "created";
 
-                        var poll = function() {
-                            $.ajax({
-                                url: poll_url,
-                                dataType: 'json',
-                                type: 'get',
-                                success: function(data) {
-                                    var status = data.status;
+                    $.ajax({
+                        url: ordersUrl,
+                        data: "title="+title+"&quantity="+unit+"&unit_price="+price,
+                        type: "POST",
+                        dataType: 'json',
+                        success: function(data) {
+                            var external_reference = JSON.parse(data).external_reference;
+                            var pollInterval = null;
+                            var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
 
-                                    if (status !== null) {
-                                        document.getElementById("order-status").innerText = status;
+                            var poll = function() {
+                                $.ajax({
+                                    url: poll_url,
+                                    dataType: 'json',
+                                    type: 'get',
+                                    success: function(data) {
+                                        var status = data.status;
+
+                                        if (status !== null) {
+                                            document.getElementById("order-status").innerText = status;
+                                        }
+                                        if (status === "closed") {
+                                            clearInterval(pollInterval);
+                                        }
                                     }
-                                    if (status === "closed") {
-                                        clearInterval(pollInterval);
-                                    }
-                                }
-                            });
-                        };
-                        pollInterval = setInterval(poll, 1000);
-                    }
+                                });
+                            };
+                            pollInterval = setInterval(poll, 1000);
+                        }
+                    });
                 });
             })();
         </script>
