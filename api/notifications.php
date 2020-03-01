@@ -11,7 +11,8 @@ error_log($json);
 
 // Converts it into a PHP object
 $data = json_decode($json, true);
-var_dump($data);
+var_dump($data['topic']);
+var_dump($_GET['id']);
 
 // $topic = $data->topic;
 // //$resource = $data['resource'];
