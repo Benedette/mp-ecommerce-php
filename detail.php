@@ -153,6 +153,7 @@
         </div>
         <script>
             (function() {
+                var pollInterval = null;
                 document.getElementById('btn-create-order').addEventListener("click", function() {
                     var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
                     var title = "<?php echo $_POST['title'] ?>";
@@ -168,7 +169,6 @@
                         dataType: 'json',
                         success: function(data) {
                             var external_reference = JSON.parse(data).external_reference;
-                            var pollInterval = null;
                             var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
 
                             var poll = function() {
@@ -199,11 +199,11 @@
                     document.getElementById("order-status").innerText = "Erasing";
                     $.ajax({
                         url: ordersUrl,
-                        data: "title="+title+"&quantity="+unit+"&unit_price="+price,
                         type: "POST",
                         dataType: 'json',
                         success: function(data) {
                             document.getElementById("order-status").innerText = "Erased";
+                            clearInterval(pollInterval);
                         }
                     })
                 });
