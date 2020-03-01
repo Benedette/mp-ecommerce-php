@@ -13,19 +13,21 @@ error_log($json);
 $data = json_decode($json, true);
 error_log($data['topic']);
 error_log($_GET['id']);
+$topic = $data['topic'];
+$id = $_GET['id'];
 
-// $topic = $data->topic;
-// //$resource = $data['resource'];
 
-// if ($topic == "merchant_order") {
-//     $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$data['id'];
-//     $ch = curl_init($url_mo);
-//     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//     $result = curl_exec($ch);
-//     curl_close($ch);
-//     error_log($result);
-// }
+//$resource = $data['resource'];
+
+if ($topic == "merchant_order") {
+    $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$id;
+    $ch = curl_init($url_mo);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    error_log($result);
+}
 
 
 ?>
