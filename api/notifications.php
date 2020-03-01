@@ -8,20 +8,18 @@ error_log($json);
 
 // Converts it into a PHP object
 $data = json_decode($json, true);
+$topic = $data['topic'];
 
 if ($topic != "payments") {
     return;
 }
 
-error_log($data['topic']);
-error_log($_GET['id']);
-$topic = $data['topic'];
+//error_log($data['topic']);
+//error_log($_GET['id']);
 $session_id = $_GET['session_id'];
 
 session_id($session_id);
-
 session_start();
-
 
 //$resource = $data['resource'];
 
