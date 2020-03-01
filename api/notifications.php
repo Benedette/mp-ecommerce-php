@@ -10,7 +10,7 @@ error_log($json);
 $data = json_decode($json, true);
 $topic = $data['topic'];
 
-if ($topic != "payments") {
+if ($topic == "payments") {
     return;
 }
 
