@@ -32,6 +32,6 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 header('Content-type: application/json');
-echo json_encode($result);
+echo json_encode($result, JSON_FORCE_OBJECT);
 
 ?>
