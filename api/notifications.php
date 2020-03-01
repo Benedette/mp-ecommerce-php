@@ -10,8 +10,8 @@ $json = file_get_contents('php://input');
 // Converts it into a PHP object
 $data = json_decode($json);
 
-print_r($data);
+//print_r($data);
 
-echo $data; 
+echo($data); 
 
 ?>
