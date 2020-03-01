@@ -31,6 +31,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 
+header('Content-type: application/json');
 echo json_encode($result);
 
 ?>
