@@ -12,8 +12,6 @@ $data = json_decode($json);
 
 print_r($data);
 
-var_dump($data);
-
 echo $data; 
 
 ?>
