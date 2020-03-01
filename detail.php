@@ -194,7 +194,7 @@
                 });
 
                 document.getElementById("btn-delete-order").addEventListener("click", function() {
-                    // logica
+                    clearInterval(pollInterval);
                     var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/delete-order.php";
                     document.getElementById("order-status").innerText = "Erasing";
                     $.ajax({
@@ -202,8 +202,9 @@
                         type: "POST",
                         dataType: 'json',
                         success: function(data) {
-                            document.getElementById("order-status").innerText = "Erased";
-                            clearInterval(pollInterval);
+                            setTimeout(() => {
+                                document.getElementById("order-status").innerText = "Erased";
+                            });
                         }
                     })
                 });
