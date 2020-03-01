@@ -19,6 +19,9 @@ $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $
 
 $json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items);
 
+echo $json;
+var_dump($json);
+
 $ch = curl_init($mp_endpoint);
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($json));
@@ -26,6 +29,4 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
-
-var_dump($result)
 ?>
