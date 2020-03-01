@@ -31,21 +31,35 @@ $headers = array('Content-type' => "application/json");
 // );
 
 // build the urlencoded data
-$postvars = http_build_query($json);
+// $postvars = http_build_query($json);
 
-// open connection
-$ch = curl_init();
+// // open connection
+// $ch = curl_init();
 
-// set the url, number of POST vars, POST data
-curl_setopt($ch, CURLOPT_URL, $mp_endpoint);
-curl_setopt($ch, CURLOPT_POST, count($json));
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-curl_setopt ($ch, CURLOPT_HTTPHEADER, $headers);
+// // set the url, number of POST vars, POST data
+// curl_setopt($ch, CURLOPT_URL, $mp_endpoint);
+// curl_setopt($ch, CURLOPT_POST, count($json));
+// curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+// curl_setopt ($ch, CURLOPT_HTTPHEADER, $headers);
 
 // execute post
-$result = curl_exec($ch);
+// $result = curl_exec($ch);
 
-// close connection
-curl_close($ch);
+// // close connection
+// curl_close($ch);
+
+$options = array(
+    'http' => array(
+      'method'  => 'POST',
+      'content' => json_encode( $json ),
+      'header' =>  "Content-Type: application/json\r\n"
+      )
+  );
+  
+  $context  = stream_context_create( $options );
+  $result = file_get_contents( $mp_endpoint, false, $context );
+  $response = json_decode( $result );
+
+  var_dump($response)
 
 ?>
