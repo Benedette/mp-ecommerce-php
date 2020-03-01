@@ -12,5 +12,5 @@ if (isset($_POST["id"], $_POST["topic"])) {
     var_dump($_POST["topic"]);
     return;
 
-
+}
 ?>
