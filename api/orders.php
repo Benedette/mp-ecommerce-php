@@ -19,33 +19,13 @@ $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $
 
 $json = array('external_reference' => $external_reference, 'notification_url' => $notification_url, 'items' => $items);
 
-$headers = array('Content-type' => "application/json");
+$ch = curl_init($mp_endpoint);
 
-// use key 'http' even if you send the request to https://...
-// $options = array(
-//     'http' => array(
-//         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-//         'method'  => 'POST',
-//         'content' => http_build_query($json)
-//     )
-// );
-
-// build the urlencoded data
-$postvars = http_build_query($json);
-
-// open connection
-$ch = curl_init();
-
-// set the url, number of POST vars, POST data
-curl_setopt($ch, CURLOPT_URL, $mp_endpoint);
-curl_setopt($ch, CURLOPT_POST, count($json));
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-curl_setopt ($ch, CURLOPT_HTTPHEADER, $headers);
-
-// execute post
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($json));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
-
-// close connection
 curl_close($ch);
 
+var_dump($result)
 ?>
