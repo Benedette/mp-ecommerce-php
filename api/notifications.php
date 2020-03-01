@@ -49,6 +49,7 @@ if ($topic == "merchant_order") {
         }
     */
     $_SESSION['db'][$external_reference] = $status;
+    error_log(json_encode($_SESSION));
 
     // $db = array($external_reference => $status);
     // $_SESSION["db"]=$db;
