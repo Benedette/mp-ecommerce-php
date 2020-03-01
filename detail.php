@@ -161,7 +161,7 @@
                     dataType: 'json',
                     success: function(data) {
                         console.log(data);
-                        console.log(data.id)
+                        console.log(JSON.parse(data).id)
                     }
                 });
 
