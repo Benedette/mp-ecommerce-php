@@ -27,7 +27,13 @@ if ($topic == "merchant_order") {
     $result = curl_exec($ch);
     curl_close($ch);
     error_log($result);
-}
 
+    $response_mo = json_decode($result);
+    $external_reference = $response_mo['external_reference'];
+    $status = $response_mo['status'];
+
+    $db = array($external_reference => $status);
+    error_log(json_encode($db, true));
+}
 
 ?>
