@@ -69,64 +69,64 @@
                 </div>
             </footer>
         </div>
+
+        <script>
+            var pollInterval = null;
+            
+            function createOrder() {
+                var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
+                var title = "<?php echo $_POST['title'] ?>";
+                var price = "<?php echo $_POST['price'] ?>";
+                var unit = document.getElementById('product_quantity').value;
+
+                document.getElementById("order_status").innerText = "created";
+
+                $.ajax({
+                    url: ordersUrl,
+                    data: "title="+title+"&quantity="+unit+"&unit_price="+price,
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success: function(data) {
+                        var external_reference = JSON.parse(data).external_reference;
+                        var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
+
+                        var poll = function() {
+                            $.ajax({
+                                url: poll_url,
+                                dataType: 'json',
+                                type: 'get',
+                                success: function(data) {
+                                    var status = data.status;
+
+                                    if (status !== null) {
+                                        document.getElementById("order_status").innerText = status;
+                                    }
+                                    if (status === "closed") {
+                                        clearInterval(pollInterval);
+                                    }
+                                }
+                            });
+                        };
+                        pollInterval = setInterval(poll, 1000);
+                    }
+                });
+            });
+
+            function cancelOrder() {
+                clearInterval(pollInterval);
+                var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/delete-order.php";
+                document.getElementById("order_status").innerText = "Erasing";
+                $.ajax({
+                    url: ordersUrl,
+                    type: "POST",
+                    success: function(data) {
+                        setTimeout(() => {
+                            document.getElementById("order_status").innerText = "Erased";
+                        }, 1500);
+                    }
+                })
+            });
+        </script>
     </body>
 </html>
-<script>
-    (function() {
-        var pollInterval = null;
-        function createOrder() {
-            var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
-            var title = "<?php echo $_POST['title'] ?>";
-            var price = "<?php echo $_POST['price'] ?>";
-            var unit = document.getElementById('product_quantity').value;
-
-            document.getElementById("order_status").innerText = "created";
-
-            $.ajax({
-                url: ordersUrl,
-                data: "title="+title+"&quantity="+unit+"&unit_price="+price,
-                type: "POST",
-                dataType: 'json',
-                contentType: 'application/json',
-                success: function(data) {
-                    var external_reference = JSON.parse(data).external_reference;
-                    var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
-
-                    var poll = function() {
-                        $.ajax({
-                            url: poll_url,
-                            dataType: 'json',
-                            type: 'get',
-                            success: function(data) {
-                                var status = data.status;
-
-                                if (status !== null) {
-                                    document.getElementById("order_status").innerText = status;
-                                }
-                                if (status === "closed") {
-                                    clearInterval(pollInterval);
-                                }
-                            }
-                        });
-                    };
-                    pollInterval = setInterval(poll, 1000);
-                }
-            });
-        });
-
-        function cancelOrder() {
-            clearInterval(pollInterval);
-            var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/delete-order.php";
-            document.getElementById("order_status").innerText = "Erasing";
-            $.ajax({
-                url: ordersUrl,
-                type: "POST",
-                success: function(data) {
-                    setTimeout(() => {
-                        document.getElementById("order_status").innerText = "Erased";
-                    }, 1500);
-                }
-            })
-        });
-    })();
-</script>
