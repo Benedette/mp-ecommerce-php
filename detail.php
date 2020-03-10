@@ -1,213 +1,131 @@
 <!DOCTYPE html>
-<html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=1024">
-    <title>Tienda e-commerce</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="format-detection" content="telephone=no">
-
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
-
-    <link rel="stylesheet" href="./assets/category.css" media="screen, print">
-
-    <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
-
-    <link rel="stylesheet" href="./assets/fonts" media="">
-    <style>
-        .as-filter-button-text {
-            font-size: 26px;
-            font-weight: 700;
-            color: #333;
-        }
-        .row.as-fixed-nav {
-            border-bottom: 1px solid #ddd;
-        }
-        .as-producttile-tilehero.with-paddlenav.with-paddlenav-onhover {
-            height: 330px;
-        }
-        .as-footnotes {
-            background: #333;
-            color: #fff;
-            padding: 16px 40px;
-        }
-    </style>
-    <style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style></head>
-
-
-
-<body class="as-theme-light-heroimage">
-
-    <div class="stack">
+<html>
+    <head>
+        <title>Ejemplo e-commerce</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=1024">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
         
-        <div class="as-search-wrapper" role="main">
-            <div class="as-navtuck-wrapper">
-                <div class="as-l-fullwidth  as-navtuck" data-events="event52">
-                    <div>
-                        <div class="pd-billboard pd-category-header">
-                            <div class="pd-l-plate-scale">
-                                <div class="pd-billboard-background">
-                                    <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
-                                </div>
-                                <div class="pd-billboard-info">
-                                    <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="/assets/custom.css" type="text/css">
+    </head>
+
+    <body>
+        <div id="page-container">
+            <div class="header-container">
+                <img src="/assets/images/banner.jpg"/>
             </div>
-            <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
-
-                <div id="accessories-tab" class="as-accessories-details">
-                    <div class="as-accessories" id="as-accessories">
-                        <div class="as-accessories-header">
-                            <div class="as-search-results-count">
-                                <span class="as-search-results-value"></span>
-                            </div>
-                        </div>
-                        <div class="as-searchnav-placeholder" style="height: 77px;">
-                            <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
-                                <div class="as-accessories-filter-tile column large-6 small-3">
-
-                                    <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
-                                        <h2 class=" as-filter-button-text">
-                                            Smartphones
-                                        </h2>
-                                    </button>
-
-
+            <div id="content-wrap">
+                <br>  
+                <div class="col-lg-8 main-section p-3 bg-white">
+                <div class="row m-0">
+                    <div class="col-lg-6 left-side-product-box pb-3">
+                        <img id="product_img" src="{{img}}" class="border p-3">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-side-pro-detail border p-3 m-0">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p id="product_title" class="m-0 p-0"><?php echo $_POST['title'] ?></p>
                                 </div>
-
-                            </div>
-                        </div>
-                        <div class="as-accessories-results  as-search-desktop">
-                            <div class="width:60%">
-                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
-                                    <div class="as-dummy-container as-dummy-img">
-
-                                        <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
-                                    </div>
-                                    <div class="images mini-gallery gal5 ">
-                                    
-
-                                        <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
-                                            <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
-                                                <div class="as-tilegallery-element as-image-selected">
-                                                    <div class=""></div>
-                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $_POST['img'] ?>) 2x);">
-                                                </div>
-                                                
-                                            </div>
-
-                                            
-                                        </div>
-
-                                        
-
-                                    </div>
-
+                                <div class="col-lg-12">
+                                    <p id="product_price" class="m-0 p-0 price-pro">$ <?php echo $_POST['price'] ?></p>
+                                    <hr class="p-0 m-0">
                                 </div>
-                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
-                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
-                                        <div class="as-producttile-title">
-                                            <h3 class="as-producttile-name">
-                                                <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
-                                                </p>
-
-                                            </h3>
+                                <div class="col-lg-3">
+                                    <br><h6>Cantidad :</h6>
+                                    <input id="product_quantity" type="number" class="form-control text-center w-100" value="1">
+                                </div>
+                                <div class="col-lg-12 mt-3">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button id="create_button" onclick="createOrder()" class="mp-button mp-button-create">Generar Orden</button>
+                                            <button hidden id="cancel_button" onclick="cancelOrder()" class="mp-button mp-button-cancel">Cancelar Orden</button>
+                                            <br><br>
+                                            <h5 id="order_status"></h5><!--Actualice aquí el estado de la órden-->
+                                            <hr>
+                                            <img src="" class="border p-3" style="width: 80%;"><!--Completar src con URL de imagen de tu QR de pago-->
+                                            <br><br>
+                                            <input hidden id="external_reference_id"></input><!--Se sugiere guardar aquí el id de la órden generada-->
                                         </div>
-                                        <h3 >
-                                            <?php echo $_POST['price'] ?>
-                                        </h3>
-                                        <h3 >
-                                            <?php echo "$" . $_POST['unit'] ?>
-                                        </h3>
-                                    </div>
-                                    <img style="width: 200px; height: 200px;" src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" />
-                                    <button type="button" class="mercadopago-button" id="btn-create-order">Create order</button>
-                                    <button type="button" class="mercadopago-button" id="btn-delete-order">Delete order</button>
-                                    <div id="order-status-wrapper">
-                                        <b>Order status:<b> <span id="order-status">not created</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
-        <div class="as-footnotes">
-            <div class="as-footnotes-content">
-                <div class="as-footnotes-sosumi">
-                    Todos los derechos reservados Tienda Tecno 2019
                 </div>
+                <br><br>
             </div>
+            <footer id="footer" class="bg-secondary">  
+                <div class="card-body text-left">
+                    <img src="/assets/images/logo.png" style="width: 100px"/>
+                    <h6 style="color: white; display:inline"> | Ejemplo de Integración</h6>
+                </div>
+            </footer>
         </div>
-        <script>
-            (function() {
-                var pollInterval = null;
-                document.getElementById('btn-create-order').addEventListener("click", function() {
-                    var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
-                    var title = "<?php echo $_POST['title'] ?>";
-                    var unit = "<?php echo $_POST['unit'] ?>";
-                    var price = "<?php echo $_POST['price'] ?>";
+    </body>
+</html>
+<script>
+    (function() {
+        var pollInterval = null;
+        function createOrder() {
+            var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
+            var title = "<?php echo $_POST['title'] ?>";
+            var price = "<?php echo $_POST['price'] ?>";
+            var unit = document.getElementById('product_quantity').value;
 
-                    document.getElementById("order-status").innerText = "created";
+            document.getElementById("order_status").innerText = "created";
 
-                    $.ajax({
-                        url: ordersUrl,
-                        data: "title="+title+"&quantity="+unit+"&unit_price="+price,
-                        type: "POST",
-                        dataType: 'json',
-                        success: function(data) {
-                            var external_reference = JSON.parse(data).external_reference;
-                            var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
+            $.ajax({
+                url: ordersUrl,
+                data: "title="+title+"&quantity="+unit+"&unit_price="+price,
+                type: "POST",
+                dataType: 'json',
+                success: function(data) {
+                    var external_reference = JSON.parse(data).external_reference;
+                    var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
 
-                            var poll = function() {
-                                $.ajax({
-                                    url: poll_url,
-                                    dataType: 'json',
-                                    type: 'get',
-                                    success: function(data) {
-                                        var status = data.status;
+                    var poll = function() {
+                        $.ajax({
+                            url: poll_url,
+                            dataType: 'json',
+                            type: 'get',
+                            success: function(data) {
+                                var status = data.status;
 
-                                        if (status !== null) {
-                                            document.getElementById("order-status").innerText = status;
-                                        }
-                                        if (status === "closed") {
-                                            clearInterval(pollInterval);
-                                        }
-                                    }
-                                });
-                            };
-                            pollInterval = setInterval(poll, 1000);
-                        }
-                    });
-                });
+                                if (status !== null) {
+                                    document.getElementById("order_status").innerText = status;
+                                }
+                                if (status === "closed") {
+                                    clearInterval(pollInterval);
+                                }
+                            }
+                        });
+                    };
+                    pollInterval = setInterval(poll, 1000);
+                }
+            });
+        });
 
-                document.getElementById("btn-delete-order").addEventListener("click", function() {
-                    clearInterval(pollInterval);
-                    var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/delete-order.php";
-                    document.getElementById("order-status").innerText = "Erasing";
-                    $.ajax({
-                        url: ordersUrl,
-                        type: "POST",
-                        success: function(data) {
-                            setTimeout(() => {
-                                document.getElementById("order-status").innerText = "Erased";
-                            }, 1500);
-                        }
-                    })
-                });
-            })();
-        </script>
-
-</div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div id="ac-gn-viewport-emitter"> </div></body></html>
+        function cancelOrder() {
+            clearInterval(pollInterval);
+            var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/delete-order.php";
+            document.getElementById("order_status").innerText = "Erasing";
+            $.ajax({
+                url: ordersUrl,
+                type: "POST",
+                success: function(data) {
+                    setTimeout(() => {
+                        document.getElementById("order_status").innerText = "Erased";
+                    }, 1500);
+                }
+            })
+        });
+    })();
+</script>
