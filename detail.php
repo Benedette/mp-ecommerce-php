@@ -25,7 +25,7 @@
                 <div class="col-lg-8 main-section p-3 bg-white">
                 <div class="row m-0">
                     <div class="col-lg-6 left-side-product-box pb-3">
-                        <img id="product_img" src="<?php echo $_POST[‘img’] ?>" class="border p-3">
+                        <img id="product_img" src="<?php echo $_POST['img'] ?>" class="border p-3">
                     </div>
                     <div class="col-lg-6">
                         <div class="right-side-pro-detail border p-3 m-0">
