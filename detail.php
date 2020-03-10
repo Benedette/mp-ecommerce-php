@@ -31,10 +31,10 @@
                         <div class="right-side-pro-detail border p-3 m-0">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <p id="product_title" class="m-0 p-0"><?php echo $_POST['title'] ?></p>
+                                    <p id="product_title" class="m-0 p-0"> <?php echo $_POST['title'] ?> </p>
                                 </div>
                                 <div class="col-lg-12">
-                                    <p id="product_price" class="m-0 p-0 price-pro"><?php echo $_POST['price'] ?></p>
+                                    <p id="product_price" class="m-0 p-0 price-pro"> <?php echo $_POST['price'] ?> </p>
                                     <hr class="p-0 m-0">
                                 </div>
                                 <div class="col-lg-3">
@@ -87,6 +87,7 @@
                 data: "title="+title+"&quantity="+unit+"&unit_price="+price,
                 type: "POST",
                 dataType: 'json',
+                contentType: 'application/json',
                 success: function(data) {
                     var external_reference = JSON.parse(data).external_reference;
                     var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
