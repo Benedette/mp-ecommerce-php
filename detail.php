@@ -34,7 +34,7 @@
                                     <p id="product_title" class="m-0 p-0"><?php echo $_POST['title'] ?></p>
                                 </div>
                                 <div class="col-lg-12">
-                                    <p id="product_price" class="m-0 p-0 price-pro">$ <?php echo $_POST['price'] ?></p>
+                                    <p id="product_price" class="m-0 p-0 price-pro"><?php echo $_POST['price'] ?></p>
                                     <hr class="p-0 m-0">
                                 </div>
                                 <div class="col-lg-3">
