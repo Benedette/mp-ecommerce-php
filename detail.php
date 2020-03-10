@@ -77,7 +77,12 @@
                 var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
                 var title = "<?php echo $_POST['title'] ?>";
                 var price = "<?php echo $_POST['price'] ?>";
+                var unit = 1;
+                /**
                 var unit = document.getElementById('product_quantity').value;
+                 */
+
+                
 
                 document.getElementById("order_status").innerText = "created";
 
