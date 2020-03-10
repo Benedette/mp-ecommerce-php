@@ -32,7 +32,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">Samsung Galaxy S9</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/samsung-galaxy-s9-xxl.jpg">
                                             <input type="hidden" name="title" value="Samsung Galaxy S9">
                                             <input type="hidden" name="price" value="1500">
@@ -53,7 +53,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">LG G6</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/l6g6.jpg">
                                             <input type="hidden" name="title" value="LG G6">
                                             <input type="hidden" name="price" value="1000">
@@ -74,7 +74,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">iPhone 8</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/u_10168742.jpg">
                                             <input type="hidden" name="title" value="iPhone 8">
                                             <input type="hidden" name="price" value="1600">
@@ -97,7 +97,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">Motorola G5</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/motorola-moto-g5-plus-1.jpg">
                                             <input type="hidden" name="title" value="Motorola G5">
                                             <input type="hidden" name="price" value="900">
@@ -118,7 +118,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">Moto G4</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/motorola-moto-g4-3.jpg">
                                             <input type="hidden" name="title" value="Moto G4">
                                             <input type="hidden" name="price" value="300">
@@ -139,7 +139,7 @@
                                 <figcaption class="info-wrap">
                                     <h6 class="title text-dots"><a href="#">Sony XPeria ZX2</a></h6>
                                     <div class="action-wrap">
-                                        <form action="/detail" method="post">
+                                        <form action="/detail.php" method="post">
                                             <input type="hidden" name="img" value="/assets/images/003.jpg">
                                             <input type="hidden" name="title" value="Sony Xperia XZ2">
                                             <input type="hidden" name="price" value="1000">
