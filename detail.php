@@ -75,8 +75,8 @@
             
             function createOrder() {
                 var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
-                var title = "<?php echo $_POST['title'] ?>";
-                var price = "<?php echo $_POST['price'] ?>";
+                var title = <?php echo $_POST['title'] ?>;
+                var price = <?php echo $_POST['price'] ?>;
                 var unit = 1;
                 /**
                 var unit = document.getElementById('product_quantity').value;
@@ -88,7 +88,7 @@
 
                 $.ajax({
                     url: ordersUrl,
-                    data: "title="+title+"&quantity="+unit+"&unit_price="+price,
+                    data: "title="+<?php echo $_POST['title'] ?>+"&quantity=1"+"&unit_price="+<?php echo $_POST['price'] ?>,
                     type: "POST",
                     dataType: 'json',
                     contentType: 'application/json',
