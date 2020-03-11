@@ -116,7 +116,7 @@
                         pollInterval = setInterval(poll, 1000);
                     }
                 });
-            });
+            };
 
             function cancelOrder() {
                 clearInterval(pollInterval);
@@ -130,8 +130,8 @@
                             document.getElementById("order_status").innerText = "Erased";
                         }, 1500);
                     }
-                })
-            });
+                });
+            };
         </script>
     </body>
 </html>
