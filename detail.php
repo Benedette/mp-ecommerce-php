@@ -78,6 +78,11 @@
                 var title = "<?php echo $_POST['title'] ?>";
                 var price = "<?php echo $_POST['price'] ?>";
                 var unit = "1";
+
+                error_log(title);
+                error_log(price);
+                error_log(unit);
+
                 /**
                 var unit = document.getElementById('product_quantity').value;
                  */
@@ -88,10 +93,11 @@
 
                 $.ajax({
                     url: ordersUrl,
-                    data: "title="+title+"&quantity=1"+"&unit_price="+price,
+                    data: "title="+title+"&quantity="+unit+"&unit_price="+price,
                     type: "POST",
                     dataType: 'json',
-                    contentType: 'application/json',
+                    /**contentType: 'application/json',
+                    */
                     success: function(data) {
                         var external_reference = JSON.parse(data).external_reference;
                         var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
