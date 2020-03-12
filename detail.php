@@ -88,7 +88,7 @@
 
                 $.ajax({
                     url: ordersUrl,
-                    data: "title="+<?php echo $_POST['title'] ?>+"&quantity=1"+"&unit_price="+<?php echo $_POST['price'] ?>,
+                    data: "title="+title+"&quantity=1"+"&unit_price="+price,
                     type: "POST",
                     dataType: 'json',
                     contentType: 'application/json',
