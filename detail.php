@@ -96,8 +96,7 @@
                     data: "title="+title+"&quantity="+unit+"&unit_price="+price,
                     type: "POST",
                     dataType: 'json',
-                    /**contentType: 'application/json',
-                    */
+                    contentType: 'application/json',
                     success: function(data) {
                         var external_reference = JSON.parse(data).external_reference;
                         var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
