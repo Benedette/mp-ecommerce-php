@@ -87,7 +87,7 @@
                     type: "POST",
                     data: "title=Shampoo&unit_price=200&quantity=1",
                     dataType: 'json',
-                    contentType: 'application/json',
+                    contentType: 'application/x-www-form-urlencoded',
                     success: function(data) {
                         var external_reference = JSON.parse(data).external_reference;
                         var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
