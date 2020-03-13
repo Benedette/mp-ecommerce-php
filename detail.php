@@ -79,10 +79,6 @@
                 var price = "<?php echo $_POST['price'] ?>";
                 var unit = "1";
 
-                error_log(title);
-                error_log(price);
-                error_log(unit);
-
                 /**
                 var unit = document.getElementById('product_quantity').value;
                  */
