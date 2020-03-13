@@ -75,20 +75,20 @@
             
             function createOrder() {
                 var ordersUrl = "https://niclas-mp-commerce-php.herokuapp.com/api/orders.php";
-                var orderData = {
-                    title: "<?php echo $_POST['title'] ?>",
-                    unit_price: <?php echo $_POST['price'] ?>
-                }
+                var title = "<?php echo $_POST['title'] ?>";
+                var unit_price = <?php echo $_POST['price'] ?>;
 
-                orderData.unit = document.getElementById('product_quantity').value;
+                var quantity = document.getElementById('product_quantity').value;
 
                 $.ajax({
                     url: ordersUrl,
                     type: "POST",
-                    data: "title=Shampoo&unit_price=200&quantity=1",
+                    data: "title="+title+"&unit_price="+unit_price+"&quantity="+quantity,
                     dataType: 'json',
                     contentType: 'application/x-www-form-urlencoded',
                     success: function(data) {
+                        document.getElementById('create_button').setAttribute('hidden', false);
+                        document.getElementById('cancel_button').removeAttribute('hidden');
                         var external_reference = JSON.parse(data).external_reference;
                         var poll_url = "https://niclas-mp-commerce-php.herokuapp.com/api/status.php?external_reference="+external_reference;
 
@@ -98,6 +98,7 @@
                                 dataType: 'json',
                                 type: 'get',
                                 success: function(data) {
+
                                     var status = data.status;
 
                                     if (status !== null) {
@@ -122,6 +123,8 @@
                     url: ordersUrl,
                     type: "POST",
                     success: function(data) {
+                        document.getElementById('cancel_button').setAttribute('hidden', false);
+                        document.getElementById('create_button').removeAttribute('hidden');
                         setTimeout(() => {
                             document.getElementById("order_status").innerText = "Erased";
                         }, 1500);
