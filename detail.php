@@ -85,7 +85,7 @@
                 $.ajax({
                     url: ordersUrl,
                     type: "POST",
-                    data: JSON.stringify(orderData),
+                    data: "title=Shampoo&unit_price=200&quantity=1",
                     dataType: 'json',
                     contentType: 'application/json',
                     success: function(data) {
