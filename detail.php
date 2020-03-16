@@ -106,6 +106,8 @@
                                     }
                                     if (status === "closed") {
                                         clearInterval(pollInterval);
+                                        document.getElementById('cancel_button').setAttribute('hidden', false);
+                                        document.getElementById('create_button').removeAttribute('hidden');
                                     }
                                 }
                             });
