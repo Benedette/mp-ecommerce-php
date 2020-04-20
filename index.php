@@ -159,7 +159,7 @@
             <footer id="footer" class="bg-secondary">  
                 <div class="card-body text-left">
                     <img src="/assets/images/logo.png" style="width: 100px"/>
-                    <h6 style="color: white; display:inline"> | Ejemplo de Integración</h6>
+                    <h6 style="color: white; display:inline"> | Exemplo de Integração QR Code</h6>
                 </div>
             </footer>
         </div>
