@@ -16,8 +16,8 @@ $currency_id = 'ARS';
 $fecha = date_create();
 $time_stamp = date_timestamp_get($fecha);
 
-$external_reference = 'niclas-' . $time_stamp;
-$notification_url = 'https://niclas-mp-commerce-php.herokuapp.com/api/notifications.php?session_id='.session_id();
+$external_reference = 'benedette-' . $time_stamp;
+$notification_url = 'https://benedette-mp-commerce-php.herokuapp.com/api/notifications.php?session_id='.session_id();
 
 $items = array('title' => $title, 'currency_id' => $currency_id ,'quantity' => $quantity, 'unit_price' => $unit_price);
 
