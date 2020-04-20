@@ -49,7 +49,7 @@
                                             <br><br>
                                             <h5 id="order_status"></h5><!--Actualice aquí el estado de la órden-->
                                             <hr>
-                                            <img src="https://www.mercadopago.com/instore/merchant/qr/5891010/4d913321959647a1a1acdaa812ac43d12e6d2daff67840d38c40d320525cd4c9.png" class="border p-3" style="width: 80%;"><!--Completar src con URL de imagen de tu QR de pago-->
+                                            <img src="https://www.mercadopago.com/instore/merchant/qr/7938804/12b0677c8af14677a374353f86b57efb3eb2020f05b94bf3adb6428445ed1cb8.png" class="border p-3" style="width: 80%;"><!--Completar src con URL de imagen de tu QR de pago-->
                                             <br><br>
                                             <input hidden id="external_reference_id"></input><!--Se sugiere guardar aquí el id de la órden generada-->
                                         </div>
