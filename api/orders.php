@@ -6,7 +6,7 @@ error_log("Session: ".session_id());
 
 http_response_code(200);
 
-$mp_endpoint = 'https://api.mercadopago.com/mpmobile/instore/qr/519628608/caixa01loja01?access_token=APP_USR-7092-012814-71dc5f92829a009096d9bf914a4900d0-519628608';
+$mp_endpoint = 'https://api.mercadopago.com/mpmobile/instore/qr/519628608/caixa01loja01?access_token=APP_USR-3703711902928676-012817-ad98593253d083aca15cdd0680a9a52f-519628608';
 
 $title = $_POST['title'];
 $quantity = intval($_POST['quantity']);
