@@ -25,7 +25,7 @@ session_start();
 
 if ($topic == "merchant_order") {
     $id = $_GET['id'];    
-    $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$id.'?access_token=APP_USR-7092-012814-71dc5f92829a009096d9bf914a4900d0-519628608';
+    $url_mo = 'https://api.mercadopago.com/merchant_orders/'.$id.'?access_token=APP_USR-3703711902928676-012817-ad98593253d083aca15cdd0680a9a52f-519628608';
     $ch = curl_init($url_mo);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
